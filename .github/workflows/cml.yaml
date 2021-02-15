@@ -28,11 +28,15 @@ jobs:
     needs: deploy-runner
     runs-on: [self-hosted,cml-runner-gpu]
     container:
-      image: dvcorg/cml-py3
+      image: dvcorg/cml
       options: --gpus all
     
     steps:
       - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
       - uses: actions/setup-node@v1
         with:
