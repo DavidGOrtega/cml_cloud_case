@@ -3,30 +3,30 @@ name: style-transfer
 on: [push]
 
 jobs:
-  # deploy-runner:
-  #   runs-on: [ubuntu-latest]
+  deploy-runner:
+    runs-on: [ubuntu-latest]
 
-  #   steps:
-  #     - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-  #     - uses: iterative/setup-cml@v1
+      - uses: iterative/setup-cml@v1
 
-  #     - name: deploy
-  #       env:
-  #         repo_token: ${{ secrets.REPO_TOKEN }} 
-  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #       run: |
-  #         cml-runner \
-  #           --cloud aws \
-  #           --cloud-region us-west  \
-  #           --cloud-type t2.micro \
-  #           --cloud-spot \
-  #           --labels=cml-runner-gpu
+      - name: deploy
+        env:
+          repo_token: ${{ secrets.REPO_TOKEN }} 
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          cml-runner \
+            --cloud aws \
+            --cloud-region us-west  \
+            --cloud-type t2.micro \
+            --cloud-spot \
+            --labels=cml-runner-gpu
           
   train:
-    #needs: deploy-runner
-    #runs-on: [self-hosted,cml-runner-gpu]
+    needs: deploy-runner
+    runs-on: [self-hosted,cml-runner-gpu]
     runs-on: [ubuntu-latest]
     container:
       image: dvcorg/cml
