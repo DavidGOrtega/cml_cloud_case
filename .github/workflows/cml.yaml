@@ -20,7 +20,7 @@ jobs:
           cml-runner \
             --cloud aws \
             --cloud-region us-west  \
-            --cloud-type g3s.xlarge \
+            --cloud-type g2.2xlarge \
             --cloud-spot \
             --labels=cml-runner-gpu
           
