@@ -54,5 +54,7 @@ jobs:
         env:
           repo_token: ${{ secrets.REPO_TOKEN}}
         run: |
+          apt-get update -y
+          apt install imagemagick -y
           pip install -r requirements.txt
           
