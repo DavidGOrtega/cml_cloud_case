@@ -29,7 +29,7 @@ jobs:
     #runs-on: [self-hosted,cml-runner-gpu]
     runs-on: [ubuntu-latest]
     container:
-      image: ubuntu:20.04
+      image: davidgortega/cml:python
       #options: --gpus all
     
     steps:
