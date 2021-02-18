@@ -35,11 +35,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: print dist
-        run: |
-          lsb_release -a
-          git version
-
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8.4'
@@ -54,5 +49,5 @@ jobs:
         env:
           repo_token: ${{ secrets.REPO_TOKEN}}
         run: |
-          yes | pip install -r requirements.txt
-          
+          apt update -y
+
