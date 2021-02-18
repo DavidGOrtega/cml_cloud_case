@@ -25,6 +25,8 @@ jobs:
             --cloud-spot \
             --labels=cml-runner-gpu \
             --cloud-ssh-private $SSH_PRIVATE
+
+          cat ./.cml/main.tf
           
   train:
     needs: deploy-runner
