@@ -26,8 +26,6 @@ jobs:
             --labels=cml-runner-gpu \
             --cloud-ssh-private="${SSH_PRIVATE}"
 
-          cat ./.cml/main.tf
-          
   train:
     needs: deploy-runner
     runs-on: [self-hosted,cml-runner-gpu]
