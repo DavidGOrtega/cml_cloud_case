@@ -50,4 +50,5 @@ jobs:
           repo_token: ${{ secrets.REPO_TOKEN}}
         run: |
           apt update -y
+          apt install imagemagick -y
 
