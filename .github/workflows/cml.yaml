@@ -30,8 +30,8 @@ jobs:
     #needs: deploy-runner
     runs-on: [self-hosted,gpu]
     #runs-on: [ubuntu-latest]
-    container:
-      image: davidgortega/cml:python
+    #container:
+      #image: davidgortega/cml:python
       #options: --gpus all
     
     steps:
