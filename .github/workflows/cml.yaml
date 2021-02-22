@@ -28,7 +28,7 @@ jobs:
 
   train:
     needs: deploy-runner
-    runs-on: [self-hosted,gpu]
+    runs-on: [self-hosted,cml-runner-gpu]
     #runs-on: [ubuntu-latest]
     container:
       image: davidgortega/cml
